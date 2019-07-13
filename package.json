@@ -1,5 +1,11 @@
 {
   "name": "rambo",
   "version": "0.0.1",
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npx pkg -t latest-linux-x64 -o rambo index.js"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.0"
+  }
 }
