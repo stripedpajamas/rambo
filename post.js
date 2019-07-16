@@ -21,6 +21,14 @@ function sendPayload () {
     channel, text: `${Math.random()}`
   }
   const req = https.request(options)
+
+  req.on('error', (e) => {
+    console.error(e)
+  })
+
+  req.on('response', (res) => {
+    console.log('Slack response:', res.statusCode)
+  })
   
   req.write(JSON.stringify(payload))
   req.end()
