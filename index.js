@@ -1,3 +1,3 @@
 const post = require('./post')
 
-setInterval(post, 1001)
+setInterval(post, 1500)
