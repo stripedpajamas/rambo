@@ -1,3 +1,14 @@
 const post = require('./post')
 
-setInterval(post, 1500)
+function sleep (ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function main () {
+  while (true) {
+    await sleep(1500)
+    post()
+  }
+}
+
+main()
